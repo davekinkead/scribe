@@ -1,0 +1,5 @@
+{
+	"name": "Scribe App",
+	"description": "A swankly litte static site generator",
+	"launch_path": "/index.html"
+}
