@@ -1,9 +1,11 @@
-# Scribe. It's Simple.
+Scribe. It's Simple.
 
-Scribe is a simple static site generator.
+Scribe is a super simple pseudo-static site generator.
 
-Just create a page in markdown, and then push it to your server, S3 or dropbox account.
+Just create a page in markdown, then push it to your server, S3 or dropbox account.
 
-That's it. No building necessary.
+That's it. No building or compiling necessary.  Just visit index.html and Scribe does the rest. Sweet eh?
 
 More features coming as soon as I sober up.
+
+Want to contribute? Awesome. Just remember though, the goal of Scribe is to have no server side code execution - just plain ol' static file delivery.
