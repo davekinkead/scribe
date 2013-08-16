@@ -1,36 +1,37 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.controllers']).
+angular.module('scribe', ['scribe.controllers']).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/post.html', controller: 'indexCtrl'});
+    $routeProvider.when('/', {templateUrl: 'partials/post.html', controller: 'postCtrl'});
     $routeProvider.when('/:postId', {templateUrl: 'partials/post.html', controller: 'postCtrl'});
+    $routeProvider.when('/:dir/:postId', {templateUrl: 'partials/post.html', controller: 'postCtrl'});
     $routeProvider.otherwise({templateUrl: 'partials/post.html', controller: 'postCtrl'});
   }]);
 	
-angular.module('myApp.controllers', [])
-	.controller('indexCtrl', function($scope, $http, $routeParams) {
-		$http.get('posts/index.md')
-			.success(function(data) {
-				$scope.post = marked(data);
-				$scope.title = 'Scribe App';
-			});
-	})
-	.controller('errorCtrl', function($scope, $http, $routeParams) {
-		$http.get('posts/404.md')
-			.success(function(data) {
-				$scope.post = marked(data);
-				$scope.title = 'Scribe App';
-			});
-	})
+angular.module('scribe.controllers', [])
 	.controller('postCtrl',function($scope, $routeParams, $http) {
-		$http.get('posts/' + $routeParams.postId + '.md')
+		
+		//	parse the path - and ugly hack until Angular supports regex routes
+		var path = ''
+		if ($routeParams.dir) 
+			path += $routeParams.dir + '\\';
+		if ($routeParams.postId) {
+			path += $routeParams.postId;
+		}	else {
+			path = 'index';
+		}
+				
+		//	retrieve and parse the markdown
+		$http.get(path + '.md')
 			.success(function(data) {
 				$scope.post = marked(data);
-				$scope.title = $routeParams.postId;
 			})
 			.error(function() {
-				$scope.post = marked("# Page does not exist\n\nSorry, " + $routeParams.postId + " doesn't seem to exist");
+				$http.get('404.md')
+					.success(function(data) {
+						$scope.post = marked(data);
+				});
 				console.log('Page not found: ' + $routeParams.postId);
-			});
-	});
+		});
+});
