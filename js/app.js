@@ -15,7 +15,7 @@ angular.module('scribe.controllers', [])
 		//	parse the path - and ugly hack until Angular supports regex routes
 		var path = ''
 		if ($routeParams.dir) 
-			path += $routeParams.dir + '\\';
+			path += $routeParams.dir + '/';
 		if ($routeParams.postId) {
 			path += $routeParams.postId;
 		}	else {
