@@ -2,7 +2,7 @@
 
 Scribe is a super simple pseudo-static site generator.
 
-Just create a page in markdown, then push it to your server, S3, [github](#/posts/scribe-on-github-pages), or dropbox account.
+Just create a page in markdown, then push it to [github](#/posts/scribe-on-github-pages), your server, S3, or dropbox account.
 
 That's it. No building or compiling necessary.  Sweet eh?
 

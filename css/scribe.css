@@ -1,0 +1,54 @@
+/**
+ * Scribe's default CSS
+ * 
+ * Got a better design? Excellent - feel free to submit a pull request.
+ * 
+ * Appologies to @idan for blantantly plagarising the design from gist.io
+ */
+
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya'), local('Alegreya-Regular'), url(//themes.googleusercontent.com/static/fonts/alegreya/v4/MYFQxfgoxFvFirdbdLj3M3YhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Alegreya Bold'), local('Alegreya-Bold'), url(//themes.googleusercontent.com/static/fonts/alegreya/v4/F5BSMOSf_T8GT2wiqqpj3brIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Alegreya Italic'), local('Alegreya-Italic'), url(//themes.googleusercontent.com/static/fonts/alegreya/v4/Q-XbT1m22Fi9BEKb7y59O73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Alegreya Bold Italic'), local('Alegreya-BoldItalic'), url(//themes.googleusercontent.com/static/fonts/alegreya/v4/IWi8e5bpnqhMRsZKTcTUWnbFhgvWbfSbdVg11QabG8w.woff) format('woff');
+}
+
+* { margin: 0; padding: 0; color: #444; background: #F9F9F9; font-size: 20px; line-height: 30px; font-family: "Alegreya",Palatino,Georgia,serif; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, pre, blockquote { margin-bottom: 20px;}
+h1 {font-size: 2em; margin-bottom: 25px;}
+h2 { font-size: 1.75em;}
+h3 { font-size: 1.5em;}
+h4 { font-size: 1.25em;}
+
+.banner { font-size: 1em; font-weight: normal; }
+.banner a { color: #CCC; }
+a { text-decoration: none; color: #999; }
+a:hover { color: #4DBCE9; }
+ul, ol { margin-left: 1em; }
+li { margin-left: 1em; }
+pre { margin-left: 1em; }
+code { color: #666; }
+
+.post { margin: 40px 0; min-height: 300px; }
+.container { max-width: 650px; margin: 0 auto; padding: 0 1em; margin-top: 50px; }
+
+footer { color: #CCC; }
+footer a { color: #AAA; text-decoration: none; }
