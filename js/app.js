@@ -37,6 +37,10 @@ angular.module('scribe.controllers', [])
 		}	else {
 			path = 'index';
 		}
+    
+    if ($routeParams.postId == '404.html') {
+      path = 'index';
+    }
 				
 		//	retrieve and parse the markdown
 		$http.get(path + '.md')
